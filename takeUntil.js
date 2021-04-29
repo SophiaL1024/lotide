@@ -19,12 +19,11 @@ const assertArraysEqual = function (arr1, arr2) {
 }
 const takeUntil = function (array, callback) {
   const results = [];
-  array.forEach(element => {
+  for (const element of array) {
     if (!callback(element)) {
       results.push(element);
-    }
-    else return results;
-  });
+    }else return results;
+  }
   return results;
 }
 const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
