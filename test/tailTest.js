@@ -8,9 +8,9 @@ assertEqual(tail([]).length, 0);
 assertEqual(tail(['a']).length, 0); */
 
 const assert = require('chai').assert;
-const tail=require('../tail');
+const _ = require('../index');
 describe("#tail",()=>{
   it("returns ['Lighthouse','Labs']",()=>{
-    assert.deepEqual(tail(["Yo Yo", "Lighthouse", "Labs"]),['Lighthouse','Labs']);
+    assert.deepEqual(_.tail(["Yo Yo", "Lighthouse", "Labs"]),['Lighthouse','Labs']);
   })
 });
