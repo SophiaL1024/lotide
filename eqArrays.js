@@ -1,17 +1,20 @@
-const assertEqual=require('./assertEqual');
-const eqArrays = function (arr1, arr2) {
-  let flag = true;
+const eqArrays = function(arr1, arr2) {
   if (arr1.length !== arr2.length) {
-    flag = false;
-  } else {
-    for (let i = 0; i < arr1.length; i++) {
+    return false;
+  }
+  for (let i = 0; i < arr1.length; i++) {
+    if (Array.isArray(arr1[i])) {
+      if (!eqArrays(arr1[i], arr2[i])) {
+        return false;
+      }
+    } else {
       if (arr1[i] !== arr2[i]) {
-        flag = false;
-      }   
+        return false;
+      }
     }
   }
-  return flag;
+  return true;
 }
-module.exports=eqArrays;
+module.exports = eqArrays;
 
 
