@@ -27,15 +27,15 @@ const eqObjects = function(object1, object2) {
   } else {
     for (const key of Object.keys(object1)) {
       if (object1[key] instanceof Array) {
-        if(!eqArrays(object1[key], object2[key])){
+        if (!eqArrays(object1[key], object2[key])) {
           return false;
         };
       } else if (typeof object1[key] === 'object') {
-        if(!eqObjects(object1[key], object2[key])){
+        if (!eqObjects(object1[key], object2[key])) {
           return false;
         };
-      } else  {
-        if(object1[key]!== object2[key]){
+      } else {
+        if (object1[key] !== object2[key]) {
           return false;
         };
       }
